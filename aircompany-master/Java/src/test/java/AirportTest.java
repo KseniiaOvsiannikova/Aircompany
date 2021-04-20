@@ -1,17 +1,18 @@
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
-import Planes.experimentalPlane;
+import planes.MilitaryPlane;
+import planes.PassengerPlane;
+import planes.Plane;
+import planes.experimentalPlane;
 import models.ClassificationLevel;
 import models.MilitaryType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class AirportTest {
 
-    private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
+    private static final Logger logger = Logger.getGlobal();
 
     @Test
     public void testGetTransportMilitaryPlanes() {
@@ -29,10 +30,10 @@ public class AirportTest {
 
     @Test
     public void testGetPassengerPlaneWithMaxCapacity() {
-        System.out.println("TEST testGetPassengerPlaneWithMaxCapacity started!");
+        logger.info("TEST testGetPassengerPlaneWithMaxCapacity started!");
         Airport airport = new Airport(Fleet.planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertTrue(expectedPlaneWithMaxPassengersCapacity.equals(planeWithMaxPassengerCapacity));
+        Assert.assertTrue(expectedPlaneWithMaxPassengersCapacity.equals(Fleet.planeWithMaxPassengerCapacity));
     }
 
     @Test
@@ -60,13 +61,11 @@ public class AirportTest {
         boolean flag = false;
         for (MilitaryPlane militaryPlane : bomberMilitaryPlanes) {
             if ((militaryPlane.getType() == MilitaryType.BOMBER)) {
-                flag = true;
             }
             else {
                 Assert.fail("Test failed!");
             }
         }
-        // if not failed
     }
 
     @Test
