@@ -42,6 +42,7 @@ abstract public class Plane {
         if (this == object) return true;
         else {
             Plane plane = (Plane) object;
+
             return maxSpeed == plane.maxSpeed &&
                     maxFlightDistance == plane.maxFlightDistance &&
                     maxLoadCapacity == plane.maxLoadCapacity &&
