@@ -13,4 +13,5 @@ public class Runner {
         logger.info(String.format("Passenger airport sorted by max speed: %s",passengerAirport.sortByMaxSpeed().toString()));
         logger.info(String.format("Plane with max passenger capacity: %s",passengerAirport.getPassengerPlaneWithMaxPassengersCapacity().toString()));
     }
+
 }

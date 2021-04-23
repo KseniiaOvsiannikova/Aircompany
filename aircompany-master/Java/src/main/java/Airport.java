@@ -13,14 +13,14 @@ public class Airport {
     private List<? extends Plane> planes;
 
     public List<PassengerPlane> getPassengerPlane() {
-        List<PassengerPlane> PassengerPlane = new ArrayList<>();
+        List<PassengerPlane> passengerPlane = new ArrayList<>();
         for (Plane plane : planes) {
             if (plane instanceof PassengerPlane) {
-                PassengerPlane.add((PassengerPlane) plane);
+                passengerPlane.add((PassengerPlane) plane);
             }
         }
 
-        return PassengerPlane;
+        return passengerPlane;
     }
 
     public List<MilitaryPlane> getMilitaryPlanes() {
@@ -110,7 +110,7 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "Airport{" + "Planes=" + planes.toString() + '}';
+        return "Airport {Planes =" + planes.toString() + '}';
     }
 
     public Airport(List<? extends Plane> planes) {

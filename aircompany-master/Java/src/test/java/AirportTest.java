@@ -17,6 +17,7 @@ public class AirportTest {
 
     @Test
     public void getTransportMilitaryPlanes() {
+        logger.info("TEST getTransportMilitaryPlanes started.");
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
         for (MilitaryPlane militaryPlane : transportMilitaryPlanes) {
             Assert.assertEquals(militaryPlane.getType(), MilitaryTypes.TRANSPORT);
@@ -25,13 +26,14 @@ public class AirportTest {
 
     @Test
     public void getPassengerPlaneWithMaxCapacity() {
-        logger.info("TEST getPassengerPlaneWithMaxCapacity started!");
+        logger.info("TEST getPassengerPlaneWithMaxCapacity started.");
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
         Assert.assertEquals(Fleet.planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity);
     }
 
     @Test
     public void getPlanesSortedByMaxLoadCapacity() {
+        logger.info("TEST getPlanesSortedByMaxLoadCapacity started.");
         List<? extends Plane> planesSortedByMaxLoadCapacity = airport.sortByMaxLoadCapacity().getPlanes();
         for (int i = 0; i < planesSortedByMaxLoadCapacity.size() - 1; i++) {
             Plane currentPlane = planesSortedByMaxLoadCapacity.get(i);
@@ -42,12 +44,14 @@ public class AirportTest {
 
     @Test
     public void hasAtLeastOneBomberInMilitaryPlanes() {
+        logger.info("TEST hasAtLeastOneBomberInMilitaryPlanes started.");
         List<MilitaryPlane> bomberMilitaryPlanes = airport.getBomberMilitaryPlanes();
         Assert.assertTrue(bomberMilitaryPlanes.size() > 0);
     }
 
     @Test
-    public void experimentalPlanesHasClassificationLevelHigherThanUnclassified(){
+    public void experimentalPlanesHasClassificationLevelHigherThanUnclassified() {
+        logger.info("TEST experimentalPlanesHasClassificationLevelHigherThanUnclassified started.");
         List<ExperimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
         for(ExperimentalPlane experimentalPlane : experimentalPlanes){
             Assert.assertNotSame(experimentalPlane.getClassificationLevel() , ClassificationLevels.UNCLASSIFIED);

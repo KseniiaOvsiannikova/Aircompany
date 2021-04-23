@@ -15,7 +15,6 @@ public class PassengerPlane extends Plane{
         return passengersCapacity;
     }
 
-
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;

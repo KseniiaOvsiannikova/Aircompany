@@ -2,7 +2,7 @@ package planes;
 
 import java.util.Objects;
 
-abstract public class Plane {
+public abstract class Plane {
     String model;
     private int maxSpeed;
     private int maxFlightDistance;
@@ -29,12 +29,10 @@ abstract public class Plane {
 
     @Override
     public String toString() {
-        return "Plane{" +
-                "model='" + model + '\'' +
+        return "Plane {model='" + model + '\'' +
                 ", maxSpeed=" + maxSpeed +
                 ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
-                '}';
+                ", maxLoadCapacity=" + maxLoadCapacity + '}';
     }
 
     @Override
@@ -54,4 +52,5 @@ abstract public class Plane {
     public int hashCode() {
         return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
     }
+
 }
